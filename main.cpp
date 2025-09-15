@@ -6,8 +6,19 @@ using namespace std;
 
 const int SIZE = 5;
 
+// enterArrayData() populates dynamic double array with user input
+// arguments: pointer to dynamic array, num of elements
+// returns: nothing
 void enterArrayData(double *arr, int SIZE);
+
+// outputArrayData() outputs the contents of dynamic double array
+// arguments: pointer to dynamic array, num of elements
+// returns: nothing
 void outputArrayData(double *arr, int SIZE);
+
+// sumArray() calculates and returns sum of the elements in dynamic array
+// arguments: pointer to dynamic array, num of elements
+// returns: sum of the array elements
 double sumArray(double *arr, int SIZE);
 
 int main() {
