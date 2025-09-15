@@ -8,6 +8,7 @@ const int SIZE = 5;
 
 void enterArrayData(double *arr, int SIZE);
 void outputArrayData(double *arr, int SIZE);
+double sumArray(double *arr, int SIZE);
 
 int main() {
     double *arr = nullptr;
@@ -15,6 +16,9 @@ int main() {
 
     enterArrayData(arr, SIZE);
     outputArrayData(arr, SIZE);
+    double sum = sumArray(arr, SIZE);
+    
+    cout << "Sum of values: " << sum << endl;
 
     delete [] arr;
 
@@ -22,15 +26,26 @@ int main() {
 }
 
 void enterArrayData(double *arr, int SIZE) {
-    cout << "Enter " << SIZE << " values:" << endl;
+    cout << "Data entry for the array:" << endl;
     for (int i = 0; i < SIZE; i++) {
+        cout << "\t> Element #" << i << ": ";
         cin >> *(arr + i);
     }
+    cout << "Data entry complete." << endl;
 }
 
 void outputArrayData(double *arr, int SIZE) {
-    cout << "Array elements: ";
-    for (int i = 0; i < SIZE; i++){
+    cout << "Outputting array elements: ";
+    for (int i = 0; i < SIZE; i++) {
         cout << *(arr + i) << " ";
     }
+    cout << endl;
+}
+
+double sumArray(double *arr, int SIZE) {
+    double sum = 0.0;
+    for (int i = 0; i < SIZE; i++) {
+        sum += *(arr + i);
+    }
+    return sum;
 }
